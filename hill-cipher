@@ -23,7 +23,17 @@ def menu():
         input("Press Enter to continue.\n")
 
 
+# Create two dictionaries, english alphabet to numbers and numbers to english alphabet, and returns them
+def get_alphabet():
+    alphabet = {}
+    for character in string.ascii_uppercase:
+        alphabet[character] = string.ascii_uppercase.index(character)
 
+    reverse_alphabet = {}
+    for key, value in alphabet.items():
+        reverse_alphabet[value] = key
+
+    return alphabet, reverse_alphabet
 
 
 # Get input from the user and checks if respects the alphabet
@@ -37,7 +47,13 @@ def get_text_input(message, alphabet):
             print("\nThe text must contain only characters from the english alphabet ([A to Z] or [a to z]).")
 
 
-
+# Check if the key is a square in length
+def is_square(key):
+    key_length = len(key)
+    if 2 <= key_length == int(math.sqrt(key_length)) ** 2:
+        return True
+    else:
+        return False
 
 
 # Create the matrix k for the key
@@ -102,7 +118,16 @@ def decrypt(k_inverse, c, alphabet):
     return encrypt(k_inverse, c, alphabet)
 
 
-
+def get_m():
+    while True:
+        try:
+            m = int(input("Insert the length of the grams (m): "))
+            if m >= 2:
+                return m
+            else:
+                print("\nYou must enter a number m >= 2\n")
+        except ValueError:
+            print("\nYou must enter a number m >= 2\n")
 
 
 # Force a Ciphertext (Known Plaintext Attack)
