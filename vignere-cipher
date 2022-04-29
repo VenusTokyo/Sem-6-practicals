@@ -45,3 +45,9 @@ if __name__ == "__main__":
     print("Ciphertext :", cipher_text)
     print("Original/Decrypted Text :",
            originalText(cipher_text, key))
+
+#sample input
+#Enter plain text: gracias
+#key:hello
+#cipher text: NVLNWHW
+
