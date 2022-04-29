@@ -1,0 +1,178 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "cocalc": {
+     "outputs": {
+      "1": {
+       "name": "input",
+       "opts": {
+        "password": false,
+        "prompt": "How many messages you want to enter? => "
+       },
+       "output_type": "stream",
+       "value": "2"
+      },
+      "2": {
+       "name": "input",
+       "opts": {
+        "password": false,
+        "prompt": "Enter your message: "
+       },
+       "output_type": "stream",
+       "value": "ShrutiSingh"
+      },
+      "3": {
+       "name": "input",
+       "opts": {
+        "password": false,
+        "prompt": "Enter the value of key: "
+       },
+       "output_type": "stream",
+       "value": "1"
+      },
+      "4": {
+       "name": "input",
+       "opts": {
+        "password": false,
+        "prompt": "1.Encription\n2.Decription\nChoose one of the above: "
+       },
+       "output_type": "stream",
+       "value": "1"
+      },
+      "6": {
+       "name": "input",
+       "opts": {
+        "password": false,
+        "prompt": "Enter your message: "
+       },
+       "output_type": "stream"
+      }
+     }
+    },
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "*********Ceaser Cipher*********\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "How many messages you want to enter? =>  2"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "Enter your message:  ShrutiSingh"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "Enter the value of key:  1"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "1.Encription\n2.Decription\nChoose one of the above:  1"
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Encripted Cipher-text:  TisvujTjohi\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "Enter your message:  "
+    }
+   ],
+   "source": [
+    "#Encripting the Plain-text\n",
+    "def encript(msg,key):\n",
+    " nmsg=\"\"\n",
+    " for i in msg:\n",
+    "     if i.isupper():\n",
+    "         nmsg+=chr((ord(i)+key-65)%26+65)\n",
+    "     else:\n",
+    "         nmsg+=chr((ord(i)+key-97)%26+97)\n",
+    " return nmsg\n",
+    "#Decripting the Cipher-text\n",
+    "def decript(msg,key):\n",
+    " nmsg=\"\"\n",
+    " for i in msg:\n",
+    "      if i.isupper():\n",
+    "             nmsg+=chr((ord(i)-key-65)%26+65)\n",
+    "      else:\n",
+    "             nmsg+=chr((ord(i)-key-97)%26+97)\n",
+    " return nmsg\n",
+    "#Menu driven code in main for encription and decription\n",
+    "def main():\n",
+    " print(\"*********Ceaser Cipher*********\")\n",
+    " times=int(input(\"How many messages you want to enter? => \"))\n",
+    " for i in range(0,times):\n",
+    "     msg=input(\"Enter your message: \")\n",
+    "     key=int(input(\"Enter the value of key: \"))\n",
+    " \n",
+    "     ch=int(input(\"1.Encription\\n2.Decription\\nChoose one of the above: \"))\n",
+    " \n",
+    "     if  ch==1:\n",
+    "           print(\"Encripted Cipher-text: \",encript(msg,key))\n",
+    "     elif ch==2:\n",
+    "           print(\"Decripted Plain-text: \",decript(msg,key))\n",
+    "     else:\n",
+    "           print(\"You Entered Wrong Choice!! Please Try Again!\")\n",
+    " print(\"**********************\")\n",
+    "main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 0,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+   ],
+   "source": [
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (system-wide)",
+   "language": "python",
+   "metadata": {
+    "cocalc": {
+     "description": "Python 3 programming language",
+     "priority": 100,
+     "url": "https://www.python.org/"
+    }
+   },
+   "name": "python3",
+   "resource_dir": "/ext/jupyter/kernels/python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
